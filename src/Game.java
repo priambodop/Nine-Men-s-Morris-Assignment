@@ -12,7 +12,7 @@ public class Game {
     public static final int NUM_PION_PER_PLAYER = 9;
     public static final int PLACING_PHASE = 1;
     public static final int MOVING_PHASE = 2;
-    public static final int THINKING_PHASE = 3;
+    public static final int FLYING_PHASE = 3;
     
     public static final int MIN_PION_ON_BOARD = 2;
     
@@ -38,7 +38,7 @@ public class Game {
     }
     
     public Pion getPionPosition(int boardPosition){
-        return this.gameBoard.getPosition(boardPosition).getPlayerOccupyIt();
+        return this.gameBoard.getPosition(boardPosition).getPlayerTakingPos();
     }
     
 }

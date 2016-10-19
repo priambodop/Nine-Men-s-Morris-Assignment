@@ -11,31 +11,38 @@
 public class Position {
 
     private int indexPosition;
-    private boolean isOccupied;
-    private Pion playerOccupyIt;
+    private boolean takenPosition;
+    private Pion playerTakingPos;
     private int[] indexOfAdjacentPos;
 
     public Position(int position) {
-        this.isOccupied = false;
+        this.takenPosition = false;
         this.indexPosition = position;
 
     }
 
-    public boolean isOccupied() {
-        return this.isOccupied;
+    public boolean posIsTaken() {
+        return this.takenPosition;
     }
 
     public int getIndexPosition() {
         return this.indexPosition;
     }
 
-    public Pion getPlayerOccupyIt() {
-        return this.getPlayerOccupyIt();
+    public Pion getPlayerTakingPos() {
+        return this.playerTakingPos;
     }
 
     public void setOccupyPos(Pion playerPion) {
-        this.isOccupied = true;
-        this.playerOccupyIt = playerPion;
+        this.takenPosition = true;
+        this.playerTakingPos = playerPion;
+    }
+    
+    public Pion setNotTaken(){
+        this.takenPosition = false;
+        Pion oldPion = this.playerTakingPos;
+        this.playerTakingPos = Pion.UNKNOWN;
+        return oldPion;
     }
 
     public void addAdjacentPositionsIndexes(int pos1, int pos2) {

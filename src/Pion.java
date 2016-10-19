@@ -9,5 +9,5 @@
  * @author priambodo_pangestu
  */
 public enum Pion {
-    PION_1,PION_2;
+    PION_1,PION_2,UNKNOWN;
 }
